@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM EXERCISE</title>
+  </head>
+  <body>
+    <button onclick="
+      heads();
+      ">heads</button>
+
+    <button onclick="
+     tails();
+    ">tails</button>
+
+    <p class="result"></p>
+
+    <input type="text" placeholder="Name" class="name" onkeydown="
+      handleKeyDown(event);
+    ">
+
+    <button onclick="
+      displayName();
+    " class="submit">Submit</button>
+
+    <p class="display"></p>
+
+    <script>
+      function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+          displayName();
+          console.log(event.key);
+        }
+      }
+
+      function displayName() {
+        const inputName = document.querySelector('.name')
+        Name = inputName.value
+
+        document.querySelector('.display').innerHTML = `Your name is: ${Name}`
+      }
+
+      function heads() {
+        document.querySelector('.result').innerHTML = 'You chose: heads'
+      }
+
+      function tails() {
+        document.querySelector('.result').innerHTML = 'You chose: tails'
+      }
+    </script>
+  </body>
+</html>
